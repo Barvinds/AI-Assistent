@@ -4,19 +4,44 @@
         rgba(18, 172, 142, 0.4),
         rgba(18, 172, 142, 0.7)
       ),
-      url("https://i.pinimg.com/originals/1a/ee/5c/1aee5c344846f449350feae457ea350e.jpg");
+      url("https://www.shutterstock.com/image-vector/sun-rays-falling-deep-into-600nw-1721181988.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
   }
-#chat{
-    background-color: #ccc;
-  }  
+#game{
+    background-image: linear-gradient(
+        to right,
+        rgba(18, 172, 142, 0.4),
+        rgba(18, 172, 142, 0.7)
+      ),
+      url("https://www.shutterstock.com/image-vector/sun-rays-falling-deep-into-600nw-1721181988.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
 #doctors{
-    background-color: rgb(37, 153, 8);
+    background-image: linear-gradient(
+        to right,
+        rgba(18, 172, 142, 0.4),
+        rgba(18, 172, 142, 0.7)
+      ),
+      url("https://www.shutterstock.com/image-vector/sun-rays-falling-deep-into-600nw-1721181988.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 #about{
-    background-color: antiquewhite;
+    background-image: linear-gradient(
+        to right,
+        rgba(18, 172, 142, 0.4),
+        rgba(18, 172, 142, 0.7)
+      ),
+      url("https://www.shutterstock.com/image-vector/sun-rays-falling-deep-into-600nw-1721181988.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   body, html {
@@ -28,16 +53,17 @@
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
     --primary: #0a8379 ;
+    
 }
 
-/* dashboard */
-/* .animated-text{
-    margin-top: 80px;
-    margin-left: 20px;
-    max-width: 850px;
-    color: #f9f9f9;
-    font-size: 40px;
-}
+
+.animated-text {
+        margin-top: 5%; 
+        text-align: center; 
+        font-size: 20px; 
+        color: white;
+    }
+
 
 .animated-text span{
     position: relative;
@@ -45,7 +71,7 @@
 
 .animated-text span::before{
     content: "Youtuber";
-    color: #f5f5f5;
+    color: #fc67ca;
     animation: words 20s infinite;
 }
 
@@ -91,60 +117,53 @@
     5%,20%,25%,40%,45%,60%,65%,80%,85%{
         width: calc(100% + 8px);
     }
-} */
+}
+
+@media only screen and (max-width: 600px) {
+    .animated-text {
+        font-size: 4vw;
+        margin-top: -10px; /* Example using viewport width */
+    }
+    
+}
 
 /* CHATBOX */
 .chatbox {
     position: fixed;
     bottom: 10px;
-    right: 30px;
+    right: 170px;
+    border: 5px solid #0a8379; 
+    border-radius: 10px; 
 }
 
-/* CONTENT IS CLOSE */
-.chatbox__support {
-    display: flex;
-    flex-direction: column;
-    background: #eee;
-    width: 300px;
-    height: 350px;
-    z-index: -123456;
-    opacity: 0;
-    transition: all .5s ease-in-out;
-}
 
-/* CONTENT ISOPEN */
-.chatbox--active {
-    transform: translateY(-10px);
-    z-index: 123456;
-    opacity: 1;
-}
-
-/* BUTTON */
-.chatbox__button {
-    text-align: right;
-}
-
-.send__button {
+.send__button{
     padding: 3px;
-    background: transparent;
+    background-color: #0a8379;
+    border-radius: 10px;
     cursor: pointer;
+}
+.send__button:hover{
+   
+    background-color: #1edaca;
+    
 }
 
 /* HEADER */
 .chatbox__header {
     position: sticky;
     top: 0;
-    background: orange;
+    
 }
 
 /* MESSAGES */
 .chatbox__messages {
     margin-top: auto;
     display: flex;
-    overflow-y: scroll;
-    flex-direction: column-reverse;
+    flex-direction: column-reverse; 
+    height: 380px;
+    overflow-y: auto;
 }
-
 .messages__item {
     background: orange;
     max-width: 60.6%;
@@ -163,19 +182,21 @@
 .chatbox__footer {
     position: sticky;
     bottom: 0;
+    
 }
 
 .chatbox__support {
-    background: #f9f9f9;
-    height: 450px;
-    width:  350px;
+    background: transparent;
+    height: 480px;
+    width:  1000px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    
 }
 
 /* Header */
 .chatbox__header {
-    background: var(--primaryGradient);
+    background: transparent;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -183,7 +204,8 @@
     padding: 15px 20px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    box-shadow: var(--primaryBoxShadow);
+    box-shadow: #0a8379;
+    border-color: #0a8379;
 }
 
 .chatbox__image--header {
@@ -230,7 +252,7 @@
     padding: 20px 20px;
     background: var(--secondaryGradient);
     box-shadow: var(--secondaryBoxShadow);
-    margin-top: 20px;
+    margin-top: 350px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
@@ -242,6 +264,7 @@
     border-radius: 30px;
     text-align: left;
     margin-right: 10px;
+    background-color: #E0E0E0;
 }
 
 .chatbox__send--footer {
@@ -249,6 +272,8 @@
     width: 70px;
     height: 40px;
     margin-right: 10px;
+    
+    
 }
 
 .chatbox__button button {
@@ -265,39 +290,87 @@
 
 .mute__button {
     background-color: transparent;
+    border-radius: 10px;
+}
+.mute__button:hover {
+    background-color: #1edaca;
+    
 }
 
 /* Media queries for responsiveness */
 
 @media only screen and (max-width: 768px) {
     .chatbox__support {
-        width: 90%; /* Adjust width for smaller screens */
+        width: 90%; 
     }
 }
 
 @media only screen and (max-width: 480px) {
     .chatbox {
-        right: 10px; /* Adjust position for smaller screens */
+        bottom: 50px;
+        right: 30px;
+        left: 30px;
+        margin: auto;
     }
+
     .chatbox__support {
-        height: 500px; /* Adjust height for smaller screens */
+        height: auto;
+        margin-bottom: 50px; /* Adjust as needed */
+    }
+
+    .chatbox__footer {
+        margin-top: 0;
+        margin-bottom: 0;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 20px 20px;
+        background: var(--secondaryGradient);
+        box-shadow: var(--secondaryBoxShadow);
+        border-radius: 20px;
     }
 }
 
-/* Media query for phones */
-@media only screen and (max-width: 600px) {
-    .chatbox__button button {
-        margin-bottom: 60px;
-        margin-right: 10px;
+@media only screen and (width: 414px) and (height: 896px) {
+    .chatbox__support {
+        height: 600px; 
     }
 }
 
-/* Media query for phones */
-/* @media only screen and (max-width: 600px) {
-    .animated-text {
-        margin-top: 40px; 
-        margin-left: 10px; 
-        max-width: 100%; 
-        font-size: 30px; 
-    }
-} */
+/* translation popup */
+
+.translate-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    z-index: 9999;
+}
+
+.translate-popup__content {
+    text-align: center;
+}
+
+.translate-popup__content h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.translate-popup__content button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.translate-popup__content button:hover {
+    background-color: #0056b3;
+}

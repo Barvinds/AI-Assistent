@@ -3,25 +3,14 @@ import { IoSendSharp } from "react-icons/io5";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
 
 const Chatbox = () => {
-    const [state, setState] = useState(false);
+    const [state, setState] = useState(true); // Changed initial state to true to show chatbox by default
     const [messages, setMessages] = useState([]);
     const [voiceEnabled, setVoiceEnabled] = useState(true);
 
     useEffect(() => {
-        const openButton = document.querySelector('.chatbox__button');
-        const chatBox = document.querySelector('.chatbox__support');
         const sendButton = document.querySelector('.send__button');
         const messageInput = document.querySelector('.chatbox__footer input');
         const muteButton = document.querySelector('.mute__button');
-
-        const toggleState = () => {
-            setState(!state);
-            if (!state) {
-                chatBox.classList.add('chatbox--active');
-            } else {
-                chatBox.classList.remove('chatbox--active');
-            }
-        };
 
         const onSendButton = () => {
             let text1 = messageInput.value;
@@ -70,7 +59,6 @@ const Chatbox = () => {
             }
         };
 
-        openButton.addEventListener('click', toggleState);
         sendButton.addEventListener('click', onSendButton);
         messageInput.addEventListener("keyup", (event) => {
             if (event.key === "Enter") {
@@ -80,12 +68,11 @@ const Chatbox = () => {
         muteButton.addEventListener('click', toggleVoice);
 
         return () => {
-            openButton.removeEventListener('click', toggleState);
             sendButton.removeEventListener('click', onSendButton);
             messageInput.removeEventListener("keyup", () => {});
             muteButton.removeEventListener('click', toggleVoice);
         };
-    }, [state, messages, voiceEnabled]);
+    }, [messages, voiceEnabled]);
 
     const updateChatText = () => {
         return messages.slice().reverse().map((item, index) => {
@@ -99,14 +86,14 @@ const Chatbox = () => {
 
     return (
         <div className="container">
-            <div className="chatbox">
-                <div className="chatbox__support chatbox--active">
+            <div className="chatbox chatbox--active">
+                <div className="chatbox__support">
                     <div className="chatbox__header">
                         <div className="chatbox__image--header">
-                            <img src="https://static.vecteezy.com/system/resources/previews/027/308/947/original/doctor-with-ai-generated-free-png.png" alt="image"  width="20px" />
+                            <img src="https://www.pngall.com/wp-content/uploads/12/Grandma-PNG-File.png" alt="image"  width="40px" height="40px" />
                         </div>
                         <div className="chatbox__content--header">
-                            <h4 className="chatbox__heading--header">MR.DOCTOR</h4>
+                            <h4 className="chatbox__heading--header">DR.GRANDMA</h4>
                         </div>
                     </div>
                     <div className="chatbox__messages">
@@ -119,10 +106,6 @@ const Chatbox = () => {
                             {voiceEnabled ? <HiSpeakerWave size={26} color='white'/> : <HiSpeakerXMark size={26} color='white'/>}
                         </button>
                     </div>
-                </div>
-                
-                <div className="chatbox__button">
-                    <button><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ269SDL-IhWphyT8oV8NrgbVT7PZjaYcgah8-_YW0SSm9GKEFqHmVcQF2iCn5QxVdQwHE&usqp=CAU" width="50px" /></button>
                 </div>
             </div>
         </div>
