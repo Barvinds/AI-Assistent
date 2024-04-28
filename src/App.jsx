@@ -56,7 +56,7 @@ const App = () => {
             {showPopup && (
                 <div className="popup">
                     <div className="popup-content">
-                        <h2>MR.MARUTHUVAR</h2>
+                        <h2>DR.GRANDMA</h2>
                         <p>In this chatbot only access for few questions is free. If you want to move further, please complete the login process.</p>
                         <div id="google_translate_element"></div>
                         <button onClick={handleAccept}>Accept</button>

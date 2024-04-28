@@ -17,7 +17,7 @@ const Nav = () => {
 
     return (
         <nav className="nav container fixed-top">
-            <Link to="/" className="nav__logo"><FaUserDoctor size="2em" />MR.MARUTHUVAR</Link>
+            <Link to="/" className="nav__logo"><FaUserDoctor size="2em" />DR.GRANDMA</Link>
 
             <div className="nav__menu" id="nav-menu">
                 <ul className="nav__list">
