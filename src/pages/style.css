@@ -58,13 +58,14 @@
 
 
 .animated-text {
-        position: sticky; 
-        margin-top: 5%;
-        text-align: center; 
-        font-size: 20px; 
-        color: white;
-    }
-
+    position: fixed; /* Changed to fixed */
+    top: 15%; /* Adjusted to your preference */
+    left: 50%; /* Adjusted to center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
 
 .animated-text span{
     position: relative;

@@ -1,22 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const TranslateWidget = () => {
+    const scriptRef = useRef(null);
+
     useEffect(() => {
-        // Load Google Translate script
-        const script = document.createElement("script");
-        script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-        script.async = true;
-        document.body.appendChild(script);
+        if (!scriptRef.current) {
+            const script = document.createElement("script");
+            script.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+            script.async = true;
+            document.body.appendChild(script);
+            scriptRef.current = script;
 
-        // Initialize Google Translate function
-        window.googleTranslateElementInit = () => {
-            new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            window.googleTranslateElementInit = () => {
+                new window.google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            }
+
+            return () => {
+                document.body.removeChild(script);
+            };
         }
-
-        return () => {
-            // Clean up function to remove script
-            document.body.removeChild(script);
-        };
     }, []);
 
     return (
