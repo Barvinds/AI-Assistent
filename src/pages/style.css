@@ -178,6 +178,7 @@
     flex-direction: column-reverse; 
     height: 320px;
     overflow-y: auto;
+    
 }
 
 .messages__item {
@@ -185,6 +186,7 @@
     background: #E0E0E0;
     padding: 8px 12px;
     max-width: 70%;
+    float: right;    
 }
 
 .messages__item--visitor,

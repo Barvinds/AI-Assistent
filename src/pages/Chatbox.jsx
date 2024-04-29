@@ -79,7 +79,7 @@ const Chatbox = () => {
             if (item.name === "Mr.DOCTOR") {
                 return <div key={index} className="messages__item messages__item--operator">{item.message}</div>;
             } else {
-                return <div key={index} className="messages__item messages__item--visitor">{item.message}</div>;
+                return <div key={index} className="messages__item messages__item--visitor messages__item--right">{item.message}</div>;
             }
         });
     };
@@ -97,7 +97,9 @@ const Chatbox = () => {
                         </div>
                     </div>
                     <div className="chatbox__messages">
+                        
                         {updateChatText()}
+                       
                     </div>
                     <div className="chatbox__footer">
                         <input type="text" placeholder="Write a message..." />
