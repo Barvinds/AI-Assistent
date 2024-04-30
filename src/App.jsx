@@ -9,11 +9,11 @@ import './App.css';
 import PreLoader from './components/Preloader';
 import TranslateWidget from './components/TranslateWidget';
 
-const App = () => {
-    const [showPopup, setShowPopup] = useState(true); // State to manage popup visibility
 
+const App = () => {
+    const [showPopup, setShowPopup] = useState(true); 
     const handleAccept = () => {
-        setShowPopup(false); // Hide the popup when user accepts
+        setShowPopup(false); 
     };
 
 

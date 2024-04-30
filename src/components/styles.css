@@ -42,9 +42,9 @@
     width:300px;
     height:400px;
     margin:1.5rem;
-    background: linear-gradient(to left,rgb(204, 255, 51,0.5),to left,rgb(255, 255, 255,0.9));
+    background: linear-gradient(to left,rgba(106, 213, 228, 0.5),to left,rgb(255, 255, 255,0.9));
     border-radius: 8px;
-    box-shadow: 0 7px 12px rgb(204, 255, 51,0.5);
+    box-shadow: 0 7px 12px rgba(63, 217, 228, 0.5);
     box-sizing: border-box;
     overflow: auto;
     position:relative;
@@ -75,7 +75,7 @@
     left:0;
     height:0;
     width:100%;
-    background: linear-gradient(to bottom,rgb(204, 255, 51,0.7),rgb(204, 255, 51,0.9));
+    background: linear-gradient(to bottom,rgba(106, 213, 228, 0.5),rgba(106, 213, 228, 0.5));
     transition:0.2s All;
 }
 .card:hover:before{
@@ -83,7 +83,7 @@
    
 }
 .card:hover{
-    background: linear-gradient(to bottom,rgb(204, 255, 51,0.7),rgb(204, 255, 51,0.9));  
+    background: linear-gradient(to bottom,rgba(106, 213, 228, 0.5),rgba(106, 213, 228, 0.5));  
 }
 .card .recipe{
     position: absolute;
@@ -115,4 +115,46 @@
 .recipe a{   
     display: block;
     text-align: center;
+}
+
+/* MealItem.css */
+.meal-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.meal-name {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.meal-details {
+    margin-top: 15px;
+}
+
+.meal-details h3 {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.meal-details ul {
+    margin-top: 5px;
+}
+
+.meal-details ul li {
+    color: #444;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.meal-details p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
 }

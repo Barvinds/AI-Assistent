@@ -124,7 +124,7 @@
 @media only screen and (max-width: 600px) {
     .animated-text {
         font-size: 4vw;
-        margin-top: -10px; /* Example using viewport width */
+        width: 100%; /* Example using viewport width */
     }
     
 }
@@ -193,6 +193,7 @@
 .messages__item--visitor,
 .messages__item--typing {
     border-radius: 20px;
+    
 }
 
 .messages__item--operator {
