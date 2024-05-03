@@ -1,37 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import './styles.css'; 
+import { FaSearch } from "react-icons/fa";
 import MealItem from "./MealItem";
-import './styles.css';
 
 const Meal = () => {
-    const [search, setSearch] = useState("");
-    const [Mymeal, setMeal] = useState(null);
+    const [naturalMedicines, setNaturalMedicines] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
-    const searchMeal = (evt) => {
-        if (evt.key === "Enter") {
-            fetch(`http://localhost:5173/searchmeals?q=${search}`)
-                .then(res => res.json())
-                .then(data => {
-                    setMeal(data);
-                    setSearch("");
-                })
-                .catch(err => console.log(err));
-        }
+    useEffect(() => {
+        fetch('http://localhost:5000/natural-medicines')
+            .then(response => response.json())
+            .then(data => setNaturalMedicines(data))
+            .catch(err => console.error('Error fetching data:', err));
+    }, []);
+
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
     };
+
+
+    // Filter the natural medicines based on the search query
+    const filteredMedicines = naturalMedicines.filter(medicine =>
+        medicine.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (
         <>
             <div className="main">
                 <div className="heading">
-                    <h1>SEARCH MEALS</h1>
+                    <h1>Natural Medicines</h1>
                 </div>
                 <div className="searchBox">
-                    <input type="search" className="search-bar" onChange={(e) => setSearch(e.target.value)} value={search} onKeyPress={searchMeal} />
+                <FaSearch className="search-icon" />
+                    <input type="search" className="search-bar" value={searchQuery} onChange={handleSearchChange} placeholder="Search natural medicines" />
                 </div>
-                <div className="container">
-                    {   
-                        Mymeal === null ? <p className="notSearch">No meals found</p> : 
-                        Mymeal.map((meal, index) => <MealItem key={index} data={meal} />)
-                    }
+                <div className="meal-container">
+                    {filteredMedicines.map(medicine => (
+                        <MealItem key={medicine.id} data={medicine} />
+                    ))}
                 </div>
             </div>
         </>

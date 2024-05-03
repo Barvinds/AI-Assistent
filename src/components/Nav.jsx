@@ -7,16 +7,11 @@ import { TbListSearch } from "react-icons/tb";
 import { TbInfoHexagonFilled } from "react-icons/tb";
 import { FaUserDoctor } from "react-icons/fa6";
 
-const Nav = () => {
+const Nav = ({ onLoginClick }) => {
     const location = useLocation();
-    const [showDropdown, setShowDropdown] = useState(false);
-
-    const toggleDropdown = () => {
-        setShowDropdown(!showDropdown);
-    };
 
     return (
-        <nav className="nav container fixed-top">
+        <nav className="nav containers fixed-top">
             <Link to="/" className="nav__logo"><FaUserDoctor size="2em" />DR.GRANDMA</Link>
 
             <div className="nav__menu" id="nav-menu">
@@ -31,16 +26,16 @@ const Nav = () => {
                     <li className="nav__item">
                         <Link to="/doctors" className={`nav__link ${location.pathname === '/doctors' ? 'active-link' : ''}`}>
                             <TbListSearch />
-                            <span className="nav__name">Doctors</span>
+                            <span className="nav__name">Medicine</span>
                         </Link>
                     </li>
-                        
+
                     <li className="nav__item">
                         <Link to="/game" className={`nav__link ${location.pathname === '/game' ? 'active-link' : ''}`}>
                             <IoGameController />
                             <span className="nav__name">Game</span>
                         </Link>
-                    </li>    
+                    </li>
 
                     <li className="nav__item">
                         <Link to="/about" className={`nav__link ${location.pathname === '/about' ? 'active-link' : ''}`}>
@@ -50,14 +45,9 @@ const Nav = () => {
                     </li>
                 </ul>
             </div>
-            
-            <div className="nav__img-container" onClick={toggleDropdown}>
+
+            <div className="nav__img-container" onClick={onLoginClick}>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkN9BY5gyMxjAxe5I3SbK0L_EJf8t-TtE4fJwH_JpMKQ&s" alt="" width="35px" height="35px" />
-                {showDropdown && (
-                    <div className="dropdown">
-                        <button className="logout-button">Login</button>
-                    </div>
-                )}
             </div>
         </nav>
     );

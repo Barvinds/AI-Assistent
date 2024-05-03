@@ -5,7 +5,7 @@
         rgba(18, 172, 142, 0.7)
       ),
       url("https://www.shutterstock.com/image-vector/sun-rays-falling-deep-into-600nw-1721181988.jpg");
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -16,7 +16,7 @@
         rgba(18, 172, 142, 0.7)
       ),
       url("https://www.shutterstock.com/image-vector/sun-rays-falling-deep-into-600nw-1721181988.jpg");
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -28,7 +28,7 @@
         rgba(18, 172, 142, 0.7)
       ),
       url("https://www.shutterstock.com/image-vector/sun-rays-falling-deep-into-600nw-1721181988.jpg");
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -39,7 +39,7 @@
         rgba(18, 172, 142, 0.7)
       ),
       url("https://www.shutterstock.com/image-vector/sun-rays-falling-deep-into-600nw-1721181988.jpg");
-    background-position: center center;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -105,7 +105,7 @@
         content: "DOCTOR";
     }
     61%,80%{
-        content: "AI";
+        content: "GENIUS";
     }
     81%,100%{
         content: "TRAINER";
@@ -124,14 +124,15 @@
 @media only screen and (max-width: 600px) {
     .animated-text {
         font-size: 4vw;
-        width: 100%; /* Example using viewport width */
+        width: 100%;
+        margin-top: -10%;
     }
     
 }
 
 /* CHATBOX */
 .chatbox {
-    position: fixed;
+    position: absolute;
     bottom: 10px;
     right: 30px;
     left: 30px;
@@ -247,7 +248,7 @@
     .chatbox {
         right: 20px;
         left: 20px;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
     }
 
     .chatbox__support {
@@ -264,6 +265,24 @@
 .mute__button{
     background-color:#0a8379;
 }
+.mute__button:hover{
+    background-color:#63ccc3;
+}
+
+@keyframes blinking {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.messages__placeholder {
+    color: #ffffff;
+    text-align: center;
+    animation: blinking 2s linear infinite;
+    padding-bottom: 150px;
+    font-size: large;  
+}
+
 /* translation popup */
 
 .translate-popup {
