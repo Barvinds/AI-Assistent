@@ -1,11 +1,8 @@
-/*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
-/*=============== VARIABLES CSS ===============*/
+
 :root {
   --header-height: 3rem;
-
-  /*========== Colors ==========*/
   --hue: 174;
   --sat: 63%;
   --first-color: hsl(var(--hue), var(--sat), 40%);
@@ -14,14 +11,10 @@
   --text-color: hsl(var(--hue), 8%, 35%);
   --body-color: hsl(var(--hue), 100%, 99%);
   --container-color: #FFF;
-
-  /*========== Font and typography ==========*/
   --body-font: 'Open Sans', sans-serif;
   --h1-font-size: 1.5rem;
   --normal-font-size: .938rem;
   --tiny-font-size: .625rem;
-
-  /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
 }
@@ -33,7 +26,7 @@
   }
 }
 
-/*=============== BASE ===============*/
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -58,20 +51,16 @@ a {
   text-decoration: none;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
 .section {
   padding: 4.5rem 0 2rem;
 }
+
 
 .section__title {
   font-size: var(--h1-font-size);
   color: var(--title-color);
   text-align: center;
   margin-bottom: 1.5rem;
-}
-
-.section__height {
-  height: 100vh;
 }
 
 /*=============== LAYOUT ===============*/

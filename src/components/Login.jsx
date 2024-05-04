@@ -29,9 +29,7 @@ function Login() {
         input {
           font-family: "Poppins", sans-serif;
         }
-        a {
-          text-decoration: none; /* Remove underline */
-        }
+
         .container {
           position: fixed;
           width: 100%;
@@ -41,11 +39,10 @@ function Login() {
         }
 
         .forms-container {
-          position:  fixed;
+          position:  absolute;
           width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
+          height: 50%;
+
         }
 
         .signin-signup {
@@ -452,7 +449,7 @@ function Login() {
       `}</style>
             <div className="forms-container">
         <div className="signin-signup">
-          <form className={`sign-in-form ${isSignUp ? '' : 'active'}`}>
+          <form className="sign-in-form">
             <h2 className="title">Sign in</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
