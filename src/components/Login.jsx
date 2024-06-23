@@ -6,6 +6,7 @@ import axios from 'axios';
 function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [forgotPasswordClicked, setForgotPasswordClicked] = useState(false);
+  const [loginForm, setLoginForm] = useState({ email: '', password: '' });
   const [signUpForm, setSignUpForm] = useState({ username: '', email: '', password: '' });
   const [error, setError] = useState('');
 
@@ -17,9 +18,37 @@ function Login() {
     setForgotPasswordClicked(!forgotPasswordClicked);
   };
 
+  const handleLoginChange = (e) => {
+    const { name, value } = e.target;
+    setLoginForm({ ...loginForm, [name]: value });
+  };
+
   const handleSignUpChange = (e) => {
     const { name, value } = e.target;
     setSignUpForm({ ...signUpForm, [name]: value });
+  };
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    if (loginForm.username === '' || loginForm.password === '') {
+      setError('Please fill in all the details');
+    } else {
+      setError('');
+      try {
+        const res = await axios.post("http://localhost:5000/login", loginForm);
+
+        if (res.data === "exist") {
+          alert("Login successful");
+        
+          window.location.href = "/home";
+        } else {
+          alert("Invalid credentials");
+        }
+      } catch (e) {
+        alert("Error occurred during login");
+        console.log(e);
+      }
+    }
   };
 
   const handleSignUpSubmit = async (e) => {
@@ -47,16 +76,27 @@ function Login() {
     <div className={`container ${isSignUp ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
-          <form className="sign-in-form">
+          <form className="sign-in-form" onSubmit={handleLoginSubmit}>
             <h2 className="title">Login</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                onChange={handleLoginChange}
+              />
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={handleLoginChange}
+              />
             </div>
+            {error && <p className="error">{error}</p>}
             <input type="submit" value="Login" className="btn solid" />
             <a href='#' onClick={toggleForgotPassword}>Forgot Password</a>
             <p className="social-text">Or Sign in with social platforms</p>
@@ -74,15 +114,30 @@ function Login() {
             <h2 className="title">Sign up</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input type="text" name="username" placeholder="Username" onChange={handleSignUpChange} />
+              <input
+                type="text"
+                name="username"
+                placeholder="Username"
+                onChange={handleSignUpChange}
+              />
             </div>
             <div className="input-field">
               <i className="fas fa-envelope"></i>
-              <input type="email" name="email" placeholder="Email" onChange={handleSignUpChange} />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                onChange={handleSignUpChange}
+              />
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
-              <input type="password" name="password" placeholder="Password" onChange={handleSignUpChange} />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                onChange={handleSignUpChange}
+              />
             </div>
             {error && <p className="error">{error}</p>}
             <input type="submit" className="btn solid" value="Sign up" />

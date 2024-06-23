@@ -43,7 +43,7 @@ app.get("/", cors(), (req, res) => {
 });
 
 // Login endpoint
-app.post("/", async (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {

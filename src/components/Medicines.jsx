@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import './styles.css'; 
 import { FaSearch } from "react-icons/fa";
-import MealItem from "./MealItem";
+import MedicineItem from "./MedicineItem";
 
-const Meal = () => {
+const Medicines = () => {
     const [naturalMedicines, setNaturalMedicines] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -19,7 +19,6 @@ const Meal = () => {
     };
 
 
-    // Filter the natural medicines based on the search query
     const filteredMedicines = naturalMedicines.filter(medicine =>
         medicine.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
@@ -36,7 +35,7 @@ const Meal = () => {
                 </div>
                 <div className="meal-container">
                     {filteredMedicines.map(medicine => (
-                        <MealItem key={medicine.id} data={medicine} />
+                        <MedicineItem key={medicine.id} data={medicine} />
                     ))}
                 </div>
             </div>
@@ -44,4 +43,4 @@ const Meal = () => {
     );
 };
 
-export default Meal;
+export default Medicines;

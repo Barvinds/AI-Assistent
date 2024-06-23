@@ -1,7 +1,7 @@
 import React from "react";
 import './styles.css';
 
-const MealItem = ({ data }) => {
+const MedicineItem = ({ data }) => {
     return (
         <div className="meal-card">
             <div className="meal-name">
@@ -15,4 +15,4 @@ const MealItem = ({ data }) => {
     );
 };
 
-export default MealItem;
+export default MedicineItem;

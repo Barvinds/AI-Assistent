@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Medicine.css';
-import Meal from 'E:/Projects/Project-2/src/components/Meal.jsx';
+import Medicines from 'E:/Projects/Project-2/src/components/Medicines.jsx';
 
 
 const Medicine = () => {
@@ -8,7 +8,7 @@ const Medicine = () => {
 
     return (
         <section className="container section section__height" id="doctors">
-         <Meal/>
+         <Medicines/>
         </section>
     );
 }
