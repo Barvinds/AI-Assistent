@@ -54,7 +54,7 @@
 }
 .meal-card {
     width:300px;
-    height:100px;
+    height:150px;
     margin:1.5rem;
     background-color: white;
     border-radius: 8px;
@@ -66,7 +66,7 @@
 
 .meal-card .meal-name {
     padding-top: 20px;
-    color: #18c3c9;;  
+    color: #198a77;;  
     text-align: center;
   }
  
@@ -88,7 +88,7 @@
     left:0;
     height:0;
     width:100%;
-    background: linear-gradient(to bottom,rgba(8, 212, 219, 0.7),rgba(8, 212, 219, 0.7));
+    background: linear-gradient(to bottom,#198a77,#198a77);
     transition:0.2s All;
 }
 .meal-card:hover:before{
@@ -96,7 +96,7 @@
    
 }
 .meal-card:hover{
-    background: linear-gradient(to bottom,rgba(8, 212, 219, 0.7),rgba(8, 212, 219, 0.7));  
+    background: linear-gradient(to bottom,#198a77,r#198a77);  
 }
 .meal-card .meal-details{
     position: absolute;
@@ -109,6 +109,7 @@
 }
 .meal-card:hover .meal-details{
     display:block;
+    background-color: #198a77;
 }
 .meal-details h2{
     margin-bottom:10px;
@@ -124,6 +125,7 @@
 .meal-details p{
     font-size: 16px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
 }
 .meal-details a{   
     display: block;

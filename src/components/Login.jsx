@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import axios from 'axios';
 
 function Login() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [forgotPasswordClicked, setForgotPasswordClicked] = useState(false);
+  const [signUpForm, setSignUpForm] = useState({ username: '', email: '', password: '' });
+  const [error, setError] = useState('');
 
   const toggleSignUp = () => {
     setIsSignUp(!isSignUp);
@@ -14,8 +17,112 @@ function Login() {
     setForgotPasswordClicked(!forgotPasswordClicked);
   };
 
+  const handleSignUpChange = (e) => {
+    const { name, value } = e.target;
+    setSignUpForm({ ...signUpForm, [name]: value });
+  };
+
+  const handleSignUpSubmit = async (e) => {
+    e.preventDefault();
+    if (signUpForm.username === '' || signUpForm.email === '' || signUpForm.password === '') {
+      setError('Please fill in all the details');
+    } else {
+      setError('');
+      try {
+        const res = await axios.post("http://localhost:5000/signup", signUpForm);
+
+        if (res.data === "exist") {
+          alert("User already exists");
+        } else if (res.data === "notexist") {
+          alert("Signup successful");
+        }
+      } catch (e) {
+        alert("Error occurred during signup");
+        console.log(e);
+      }
+    }
+  };
+
   return (
     <div className={`container ${isSignUp ? 'sign-up-mode' : ''}`}>
+      <div className="forms-container">
+        <div className="signin-signup">
+          <form className="sign-in-form">
+            <h2 className="title">Login</h2>
+            <div className="input-field">
+              <i className="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <input type="submit" value="Login" className="btn solid" />
+            <a href='#' onClick={toggleForgotPassword}>Forgot Password</a>
+            <p className="social-text">Or Sign in with social platforms</p>
+            <div className="social-media">
+              <a href="#" className="social-icon">
+                <FcGoogle />
+              </a>
+              <a href="#" className="social-icon">
+                <FaFacebook />
+              </a>
+            </div>
+          </form>
+
+          <form className={`sign-up-form ${isSignUp ? 'active' : ''}`} onSubmit={handleSignUpSubmit}>
+            <h2 className="title">Sign up</h2>
+            <div className="input-field">
+              <i className="fas fa-user"></i>
+              <input type="text" name="username" placeholder="Username" onChange={handleSignUpChange} />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-envelope"></i>
+              <input type="email" name="email" placeholder="Email" onChange={handleSignUpChange} />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
+              <input type="password" name="password" placeholder="Password" onChange={handleSignUpChange} />
+            </div>
+            {error && <p className="error">{error}</p>}
+            <input type="submit" className="btn solid" value="Sign up" />
+            <p className="social-text">Or Sign up with social platforms</p>
+            <div className="social-media">
+              <a href="#" className="social-icon">
+                <FcGoogle />
+              </a>
+              <a href="#" className="social-icon">
+                <FaFacebook />
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div className="panels-container">
+        <div className="panel left-panel">
+          <div className="content">
+            <button className="btn transparent" onClick={toggleSignUp}>
+              Sign up
+            </button>
+          </div>
+        </div>
+        <div className="panel right-panel">
+          <div className="content">
+            <button className="btn transparent" onClick={toggleSignUp}>
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+      {forgotPasswordClicked && (
+        <div className="forgot-password">
+          <p>Forgot your password?</p>
+          <p>No worries! Please contact support.</p>
+          <button onClick={toggleForgotPassword}>Close</button>
+        </div>
+      )}
+
       <style>{`
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
@@ -386,6 +493,9 @@ function Login() {
             transform: translate(-50%, 0);
           }
         }
+          .error{
+            color:red;
+          }
 
         @media (max-width: 570px) {
           form {
@@ -447,85 +557,8 @@ function Login() {
           animation: slideOut 0.5s ease forwards;
         }
       `}</style>
-            <div className="forms-container">
-        <div className="signin-signup">
-          <form className="sign-in-form">
-            <h2 className="title">Sign in</h2>
-            <div className="input-field">
-              <i className="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div className="input-field">
-              <i className="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Login" className="btn solid" />
-            <a href='#' onClick={toggleForgotPassword}>Forgot Password</a>
-            <p className="social-text">Or Sign in with social platforms</p>
-            <div className="social-media">
-              <a href="#" className="social-icon">
-              <FcGoogle />
-              </a>
-              <a href="#" className="social-icon">
-                <FaFacebook />
-              </a>
-            </div>
-          </form>
-          <form className={`sign-up-form ${isSignUp ? 'active' : ''}`}>
-            <h2 className="title">Sign up</h2>
-            <div className="input-field">
-              <i className="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div className="input-field">
-              <i className="fas fa-envelope"></i>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div className="input-field">
-              <i className="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" className="btn" value="Sign up" />
-            <p className="social-text">Or Sign up with social platforms</p>
-            <div className="social-media">
-              <a href="#" className="social-icon">
-              <FcGoogle />
-              </a>
-              <a href="#" className="social-icon">
-              <FaFacebook />
-              </a>
-            </div>
-          </form>
-        </div>
-      </div>
-      
-      <div className="panels-container">
-        <div className="panel left-panel">
-          <div className="content">
-            <br></br>
-            <button className="btn transparent" onClick={toggleSignUp}>
-              Sign up
-            </button>
-          </div>
-        </div>
-        <div className="panel right-panel">
-          <div className="content">
-            <button className="btn transparent" onClick={toggleSignUp}>
-              Sign in
-            </button>
-          </div>
-          
-        </div>
-      </div>
-      {forgotPasswordClicked && (
-        <div className="forgot-password">
-          <p>Forgot your password?</p>
-          <p>No worries! Please contact support.</p>
-          <button onClick={toggleForgotPassword}>Close</button>
-        </div>
-      )}
     </div>
   );
 }
 
-export default Login;
+export default Login

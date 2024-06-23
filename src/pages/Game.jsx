@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './style.css';
 
+
 const Game = () => {
- 
     return (
-        <section id="game" className="container section section__height">
-      
+        <section className="container section section__height" id="game">
+            <h1>Game</h1>
         </section>
     );
-    };
-
-
-
+}
 
 export default Game;
+
+

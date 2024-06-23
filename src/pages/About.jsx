@@ -12,4 +12,4 @@ const About = () => {
 
 export default About;
 
-// Repeat this structure for About, Skills, Portfolio, and ContactMe components
+
