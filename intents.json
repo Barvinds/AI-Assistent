@@ -1,0 +1,120 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hey", "How are you", "Is anyone there?", "Hello", "Good day"],
+      "responses": ["Hey :-)", "Hello, welcome to our motorcycle shop", "Hi there, how can I assist you with your motorcycle needs?", "Hi there, how can I help you today?"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": ["See you later, thanks for visiting our motorcycle shop", "Have a great day and ride safe!", "Bye! Come back again soon for all your motorcycle needs."]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["You're welcome!", "Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "buy_motorcycle",
+      "patterns": ["I want to buy a motorcycle", "What motorcycles do you have?", "Show me your motorcycles", "I am looking for a new bike"],
+      "responses": ["We have a wide range of motorcycles including sports bikes, cruisers, and touring bikes.", "Check out our latest collection of motorcycles on our website.", "We offer motorcycles from brands like Harley-Davidson, Yamaha, and Honda."]
+    },
+    {
+      "tag": "motorcycle_parts",
+      "patterns": ["Do you sell motorcycle parts?", "I need a new exhaust for my bike", "What parts do you have?", "I am looking for bike accessories"],
+      "responses": ["We have a variety of motorcycle parts including exhausts, tires, and brakes.", "You can find parts and accessories for all major motorcycle brands.", "Visit our parts section for the latest deals on motorcycle parts and accessories."]
+    },
+    {
+      "tag": "service",
+      "patterns": ["Do you offer motorcycle servicing?", "I need to service my bike", "Can you fix my motorcycle?", "Where can I get my bike serviced?"],
+      "responses": ["Yes, we offer comprehensive motorcycle servicing.", "Our service center handles everything from regular maintenance to major repairs.", "Book an appointment online for a hassle-free service experience."]
+    },
+    {
+      "tag": "payments",
+      "patterns": ["Do you take credit cards?", "Do you accept Mastercard?", "Can I pay with Paypal?", "Are you cash only?"],
+      "responses": ["We accept VISA, Mastercard, and Paypal.", "We accept most major credit cards, and Paypal.", "You can choose from various payment options at checkout."]
+    },
+    {
+      "tag": "delivery",
+      "patterns": ["How long does delivery take?", "How long does shipping take?", "When do I get my motorcycle?", "What are your delivery times?"],
+      "responses": ["Delivery times vary depending on your location, but it typically takes 5-7 days.", "Shipping usually takes 5-7 days for motorcycles and 2-4 days for parts.", "You will receive a tracking number once your order has been shipped."]
+    },
+    {
+      "tag": "funny",
+      "patterns": ["Tell me a motorcycle joke!", "Tell me something funny about bikes!", "Do you know a motorcycle joke?"],
+      "responses": ["Why don't motorcycles get tired? Because they are two-tired.", "What do you call a laughing motorcycle? A Yamahahaha."]
+    },
+    {
+      "tag": "motorcycle_brands",
+      "patterns": ["What brands of motorcycles do you sell?", "Do you have Yamaha bikes?", "Can I get a Harley-Davidson here?", "Which brands are available?"],
+      "responses": ["We sell motorcycles from Yamaha, Harley-Davidson, Honda, Ducati, Kawasaki, and more.", "Yes, we have a wide range of Yamaha motorcycles.", "Harley-Davidson models are available in our collection."]
+    },
+    {
+      "tag": "sports_bikes",
+      "patterns": ["Do you have sports bikes?", "Show me sports motorcycles", "I'm looking for a fast bike", "What sports bikes do you have?"],
+      "responses": ["We offer a variety of sports bikes from top brands like Yamaha, Suzuki, and Kawasaki.", "Check out our collection of sports motorcycles for a thrilling ride.", "Our sports bikes are perfect for speed enthusiasts."]
+    },
+    {
+      "tag": "cruiser_bikes",
+      "patterns": ["Do you have cruiser bikes?", "Show me cruiser motorcycles", "I'm looking for a comfortable ride", "What cruiser bikes do you have?"],
+      "responses": ["We have a range of cruiser bikes from brands like Harley-Davidson and Indian.", "Cruiser motorcycles are great for long, comfortable rides.", "Explore our cruiser bike collection for a relaxed riding experience."]
+    },
+    {
+      "tag": "touring_bikes",
+      "patterns": ["Do you have touring bikes?", "Show me touring motorcycles", "I'm looking for a bike for long trips", "What touring bikes do you have?"],
+      "responses": ["We offer touring bikes perfect for long-distance travel, from brands like BMW and Honda.", "Touring motorcycles are designed for comfort and performance on long rides.", "Check out our touring bike collection for your next adventure."]
+    },
+    {
+      "tag": "electric_bikes",
+      "patterns": ["Do you have electric motorcycles?", "Show me electric bikes", "I'm looking for an eco-friendly bike", "What electric bikes do you have?"],
+      "responses": ["We have a range of electric motorcycles from brands like Zero Motorcycles and Harley-Davidson.", "Electric bikes offer an eco-friendly and efficient riding experience.", "Explore our collection of electric motorcycles for a greener ride."]
+    },
+    {
+      "tag": "used_bikes",
+      "patterns": ["Do you sell used motorcycles?", "I'm looking for a pre-owned bike", "Do you have second-hand motorcycles?", "What used bikes do you have?"],
+      "responses": ["We have a selection of used motorcycles in great condition.", "Check out our inventory of pre-owned bikes for budget-friendly options.", "Our used motorcycles are inspected and certified for quality."]
+    },
+    {
+      "tag": "financing",
+      "patterns": ["Do you offer financing options?", "Can I finance a motorcycle?", "What are your financing plans?", "How can I get a loan for a bike?"],
+      "responses": ["We offer flexible financing options for all our motorcycles.", "You can apply for financing directly on our website.", "Our financing plans are designed to make it easier for you to own your dream bike."]
+    },
+    {
+      "tag": "insurance",
+      "patterns": ["Do you offer motorcycle insurance?", "Can I get insurance for my bike?", "What insurance options do you have?", "How can I insure my motorcycle?"],
+      "responses": ["We provide comprehensive motorcycle insurance plans.", "You can get insurance quotes and purchase plans directly through us.", "Our insurance options cover theft, damage, and liability."]
+    },
+    {
+      "tag": "helmet",
+      "patterns": ["Do you sell helmets?", "I need a new helmet", "What helmets do you have?", "Show me your helmet collection"],
+      "responses": ["We offer a wide range of helmets from top brands.", "Check out our collection of helmets for all types of riders.", "Our helmets are designed for safety and comfort."]
+    },
+    {
+      "tag": "jacket",
+      "patterns": ["Do you sell motorcycle jackets?", "I need a new riding jacket", "What jackets do you have?", "Show me your jacket collection"],
+      "responses": ["We have a variety of motorcycle jackets for different riding styles.", "Our jackets are made from high-quality materials for safety and comfort.", "Explore our collection of riding jackets for the best protection."]
+    },
+    {
+      "tag": "gloves",
+      "patterns": ["Do you sell motorcycle gloves?", "I need new riding gloves", "What gloves do you have?", "Show me your glove collection"],
+      "responses": ["We offer a range of motorcycle gloves for all weather conditions.", "Our gloves provide excellent grip and protection.", "Check out our collection of riding gloves for the perfect fit."]
+    },
+    {
+      "tag": "boots",
+      "patterns": ["Do you sell motorcycle boots?", "I need new riding boots", "What boots do you have?", "Show me your boot collection"],
+      "responses": ["We have a variety of motorcycle boots for different types of riding.", "Our boots are designed for durability and protection.", "Explore our collection of riding boots for the best performance."]
+    },
+    {
+      "tag": "accessories",
+      "patterns": ["Do you sell motorcycle accessories?", "I need some bike accessories", "What accessories do you have?", "Show me your accessory collection"],
+      "responses": ["We offer a wide range of motorcycle accessories including saddlebags, mirrors, and more.", "Check out our collection of accessories to enhance your ride.", "Our accessories are designed to fit all major motorcycle brands."]
+    },
+    {
+      "tag": "engine_oil",
+      "patterns": ["Do you sell engine oil?", "I need motorcycle engine oil", "What engine oil do you have?", "Show me your engine oil collection"],
+      "responses": ["We offer high-quality engine oil for all types of motorcycles.", "Our engine oils are designed to improve performance and longevity."]
+
+    }
+  ]
+}

@@ -10,7 +10,7 @@
   --title-color: hsl(var(--hue), 12%, 15%);
   --text-color: hsl(var(--hue), 8%, 35%);
   --body-color: hsl(var(--hue), 100%, 99%);
-  --container-color: #FFF;
+  --container-color: #ffffff;
   --body-font: 'Open Sans', sans-serif;
   --h1-font-size: 1.5rem;
   --normal-font-size: .938rem;
@@ -91,6 +91,7 @@ a {
   align-items: center;
   padding-right: 10px;
   padding-left: 20px;
+ 
   
 }
 
@@ -101,13 +102,11 @@ a {
 }
 
 
-.nav__img-container {
+/* .nav__img-container {
   position: relative;
-  width: 30px;
-  height: 30px;
-  margin-right: 20px;
+  margin-right: 10px;
   display: inline-block;
-}
+} */
 
 .nav__img-container img {
   position: absolute;
@@ -153,7 +152,7 @@ a {
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: var(--container-color);
+    background-color: #fcfcfc;
     box-shadow: 0 -1px 12px hsla(var(--hue), var(--sat), 15%, 0.15);
     width: 100%;
     height: 4rem;
@@ -294,7 +293,7 @@ a {
     left: 0px;
     right: 0;
     z-index: 999;
-    background-color: #fff;
+    background-color: #e6e6e6;
     column-gap: 2rem; 
 
 

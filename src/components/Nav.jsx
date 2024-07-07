@@ -6,6 +6,7 @@ import { IoGameController } from "react-icons/io5";
 import { TbListSearch } from "react-icons/tb";
 import { TbInfoHexagonFilled } from "react-icons/tb";
 import { FaUserDoctor } from "react-icons/fa6";
+import { BsPersonCircle } from "react-icons/bs";
 
 const Nav = ({ onLoginClick }) => {
     const location = useLocation();
@@ -47,7 +48,7 @@ const Nav = ({ onLoginClick }) => {
             </div>
 
             <div className="nav__img-container" onClick={onLoginClick}>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkN9BY5gyMxjAxe5I3SbK0L_EJf8t-TtE4fJwH_JpMKQ&s" alt="" width="35px" height="35px" />
+            <BsPersonCircle size={35}/>
             </div>
         </nav>
     );

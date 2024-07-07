@@ -8,9 +8,7 @@ const Home = () => {
     return (
       <>
         <section id="home" className="container section section__height">
-        <div class="animated-text">
-          <h1>WELLCOME TO DR.GRANDMA <span></span></h1>     
-        </div>
+        <img src="https://static.wixstatic.com/media/cbbfa4_6837841839e8454ca66998053fd8bfa7~mv2.gif" width="300px" height="300px"/>
         <div> <Chatbox/></div>
         </section>
         </>
